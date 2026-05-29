@@ -63,7 +63,7 @@
 .map-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: fit;
   object-position: center;
   display: block;
   opacity: 0.9;
@@ -159,6 +159,7 @@
     }
 
     .popup {
+      .popup {
   width: 980px;
   max-width: 95vw;
   min-height: 300px;
@@ -170,6 +171,7 @@
   grid-template-columns: 1.4fr 0.9fr;
   overflow: hidden;
 }
+    }
 
     .video-box {
       background: #020617;
@@ -359,9 +361,6 @@
     padding: 100px 20px 40px;
   }
 }
-#dokumenter {
-  scroll-margin-top: 70px;
-}
   </style>
 </head>
 
@@ -371,7 +370,9 @@
     <h1>TreeAngle=</h1>
     <nav>
       <a href="#beranda">Beranda</a>
-      <a href="#dokumenter">Dokumenter</a>
+      <a href="#dokumenter" #dokumenter {
+        scroll-margin-top : 70px
+      }>Dokumenter </a>
     </nav>
   </header>
 
