@@ -147,28 +147,28 @@
       }
 
       .sumatra {
-        top: 56%;
-        left: 17%;
+        top: 53%;
+        left: 21%;
       }
       .jawa {
-        top: 78%;
+        top: 66.5%;
         left: 34%;
       }
       .kalimantan {
-        top: 57%;
-        left: 42%;
+        top: 43%;
+        left: 35%;
       }
       .sulawesi {
-        top: 60%;
-        left: 54%;
+        top: 53%;
+        left: 53.5%;
       }
       .papua {
-        top: 66%;
-        left: 89%;
+        top: 50.5%;
+        left: 93%;
       }
       .bali {
-        top: 80%;
-        left: 43%;
+        top: 69%;
+        left: 44%;
       }
 
       .popup-bg {
@@ -393,6 +393,14 @@
         font-size: 14px;
       }
 
+      #fotoIsu {
+        width: 100%;
+        height: 320px;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        object-position: center;
+      }
+
       @media (max-width: 900px) {
         .doc-grid {
           grid-template-columns: 1fr 1fr;
@@ -569,6 +577,130 @@
           font-size: 12px;
         }
       }
+
+.donation-section {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 40px;
+  color: white;
+}
+
+.donation-section h2 {
+  text-align: center;
+  font-size: 40px;
+  color: #facc15;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 40px;
+}
+
+.amount-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.amount-card h3 {
+  color: #22c55e;
+  margin-bottom: 25px;
+}
+
+.amount-input {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.amount-input span {
+  font-size: 48px;
+  color: #94a3b8;
+}
+
+.amount-input input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 64px;
+  width: 100%;
+}
+
+.quick-amount {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.quick-amount button {
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1px solid #22c55e;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.quick-amount .active {
+  background: #22c55e;
+}
+
+.payment-title {
+  margin: 40px 0 20px;
+}
+
+.payment-list {
+  background: rgba(255,255,255,.05);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.payment-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.payment-info img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.payment-info h4 {
+  margin-bottom: 5px;
+}
+
+.payment-info p {
+  color: #94a3b8;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 18px;
+  border: none;
+  border-radius: 16px;
+  background: #facc15;
+color: #0f172a;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
     </style>
   </head>
 
@@ -578,20 +710,18 @@
       <nav>
         <a href="#beranda">Beranda</a>
         <a href="#dokumenter">Dokumenter </a>
+        <a href="#donasi">Donasi </a>
       </nav>
     </header>
 
     <section class="hero" id="beranda">
       <div class="intro">
-        <h2>Jelajahi Cerita Indonesia</h2>
-        <p>
-          Klik waypoint pada peta untuk membuka dokumenter dari berbagai daerah
-          Nusantara.
-        </p>
+        <h2>TreeAngle</h2>
+        <p>Kenali lingkunganmu, watch it, feel it, change it</p>
       </div>
 
       <div class="map-container">
-        <img src="/peta.jpg" alt="Peta Indonesia" />
+        <img src="/peta-fix.jpg" alt="Peta Indonesia" />
         di
         <div
           class="pin sumatra"
@@ -657,16 +787,17 @@
           class="pin papua"
           onclick="
             openPopup(
-              'Lembah Baliem',
-              'Papua',
-              'Kisah Lembah Baliem, ruang budaya masyarakat Papua yang menyimpan tradisi, kehidupan adat, dan sejarah panjang pegunungan timur',
-              'https://www.youtube.com/embed/QLk2CluSYuY',
-              'https://youtu.be/QLk2CluSYuY',
-
               'Pesta Babi',
-              'Tradisi pesta babi masih menjadi bagian penting dalam beberapa upacara adat masyarakat Papua.',
-              'https://www.youtube.com/embed/MpdrWgDRVf8',
-              'https://www.youtube.com/watch?v=MpdrWgDRVf8',
+              'Papua Selatan',
+              'Pesta babi masih menjadi penting dalam beberapa upacara adat di Papua.',
+              'https://www.youtube.com/embed/MpdrWgDRVf8?si=jp9sRPQLP7VB7INk',
+              'https://youtu.be/MpdrWgDRVf8?si=jp9sRPQLP7VB7INk',
+
+              'How is it there?',
+              'Papua Selatan',
+              'Ikuti perkembangan atas isu yang dibahas dalam dokumenter',
+              'isu.jpg',
+              'https://umm.ac.id/pesta-babi-suara-papua-yang-tidak-ingin-didengar/'
             )
           "
         >
@@ -759,15 +890,16 @@
 
         <div class="doc-card">
           <iframe
-            src="https://www.youtube.com/embed/QLk2CluSYuY"
+            src="https://www.youtube.com/embed/MpdrWgDRVf8?si=jp9sRPQLP7VB7INk"
             allowfullscreen
           ></iframe>
           <div class="doc-content">
-            <h3>Lembah Baliem</h3>
+            <h3>Pesta Babi</h3>
             <h4>Papua</h4>
             <p>
-              Kisah Lembah Baliem, ruang budaya masyarakat Papua yang menyimpan
-              tradisi, kehidupan adat, dan sejarah panjang pegunungan timur.
+              Pesta Babi adalah film dokumenter investigasi yang menggambarkan
+              ironi kehancuran ruang hidup masyarakat adat di Papua akibat
+              proyek skala besar.
             </p>
           </div>
         </div>
@@ -805,25 +937,29 @@
               <a id="watchLinkleft" class="watch" href="#" target="_blank">
                 Tonton Selengkapnya
               </a>
+              <!-- <button class="close" onclick="closePopup()">Tutup</button> -->
 
-              <button class="close" onclick="closePopup()">Tutup</button>
+              <a id="watchLinkright" class="watch" href="https://umm.ac.id/pesta-babi-suara-papua-yang-tidak-ingin-didengar/" target="_blank">
+                Follow the story
+              </a>
             </div>
           </div>
         </div>
 
         <div class="current-card">
           <div class="video-box">
-            <iframe id="video" src="" frameborder="0" allowfullscreen> </iframe>
+            <img id="fotoIsu" src="/isu.jpg" alt="" />
           </div>
 
           <div class="card-content">
             <h2 id="isu">Isu terkini</h2>
+            <h4 id="asal">Lokasi</h4>
             <p id="desk">Deskripsi Isu</p>
 
             <div class="buttons">
-              <a id="watchLinkright" class="watch" href="#" target="_blank">
+              <!-- <a id="watchLinkright" class="watch" href="https://umm.ac.id/pesta-babi-suara-papua-yang-tidak-ingin-didengar/" target="_blank">
                 Follow the story
-              </a>
+              </a> -->
 
               <button class="close" onclick="closePopup()">Tutup</button>
             </div>
@@ -831,6 +967,114 @@
         </div>
       </div>
     </div>
+
+    <section class="donation-section" id="donasi">
+
+  <h2>Donasi</h2>
+  <p class="subtitle">Bantu mereka yang membutuhkan</p>
+
+  <div class="amount-card">
+
+    <h3>Masukkan Nominal Donasi</h3>
+
+    <div class="amount-input">
+      <span>Rp</span>
+      <input type="text" inputmode="numeric" value="50.000" id="nominal">
+    </div>
+
+    <p>Masukkan nominal donasi sesuai keinginan Anda</p>
+
+    <div class="quick-amount">
+      <button>10.000</button>
+      <button>25.000</button>
+      <button class="active">50.000</button>
+      <button>100.000</button>
+      <button>200.000</button>
+    </div>
+
+  </div>
+
+  <h3 class="payment-title">Pilih Metode Pembayaran</h3>
+
+  <div class="payment-list">
+
+    <div class="payment-item active">
+      <div class="payment-info">
+        <img src="/bank.jpeg">
+        <div>
+          <h4>Transfer Bank</h4>
+          <p>Transfer ke rekening bank</p>
+        </div>
+      </div>
+
+      <input type="radio" checked>
+    </div>
+
+    <div class="payment-item">
+      <div class="payment-info">
+        <img src="/gopay.jpeg">
+        <div>
+          <h4>GoPay</h4>
+          <p>Pembayaran melalui GoPay</p>
+        </div>
+      </div>
+
+      <input type="radio">
+    </div>
+
+    <div class="payment-item">
+      <div class="payment-info">
+        <img src="/ovo.jpeg">
+        <div>
+          <h4>OVO</h4>
+          <p>Pembayaran melalui OVO</p>
+        </div>
+      </div>
+
+      <input type="radio">
+    </div>
+    <div class="payment-item">
+      <div class="payment-info">
+        <img src="/spay.jpeg">
+        <div>
+          <h4>Shoppe Pay</h4>
+          <p>Pembayaran melalui Shoppe Pay</p>
+        </div>
+      </div>
+
+      <input type="radio">
+    </div>
+    <div class="payment-item">
+      <div class="payment-info">
+        <img src="/dana.jpeg">
+        <div>
+          <h4>Dana</h4>
+          <p>Pembayaran melalui Dana</p>
+        </div>
+      </div>
+
+      <input type="radio">
+    </div>
+    <div class="payment-item">
+      <div class="payment-info">
+        <img src="/debit.jpeg">
+        <div>
+          <h4>Debit</h4>
+          <p>Pembayaran melalui Debit</p>
+        </div>
+      </div>
+
+      <input type="radio">
+    </div>
+
+  </div>
+
+  <button class="submit-btn">
+    Kirim Donasi
+  </button>
+  <p>🔒Transaksi aman dan terenkripsi</p>
+<h3 class="payment-title">Terimakasih sudah berdonasi</h3>
+</section>
 
     <script>
       function openPopup(
@@ -841,8 +1085,9 @@
         youtubeUrl,
 
         iSu,
+        asal,
         desk,
-        video,
+        fotoIsu,
         videoyt,
       ) {
         document.getElementById("judul").innerText = judul;
@@ -853,8 +1098,9 @@
         document.getElementById("popupBg").style.display = "flex";
 
         document.getElementById("isu").innerText = iSu;
+        document.getElementById("asal").innerText = asal;
         document.getElementById("desk").innerText = desk;
-        document.getElementById("video").src = video;
+        document.getElementById("fotoISu").src = fotoIsu;
         document.getElementById("watchLinkright").href = videoyt;
       }
 
@@ -862,6 +1108,14 @@
         document.getElementById("popupBg").style.display = "none";
         document.getElementById("videoFrame").src = "";
       }
+
+      const nominal = document.getElementById("nominal");
+
+nominal.addEventListener("input", function () {
+  let angka = this.value.replace(/\D/g, "");
+
+  this.value = new Intl.NumberFormat("id-ID").format(angka);
+});
     </script>
   </body>
 </html>
