@@ -701,6 +701,22 @@ color: #0f172a;
   cursor: pointer;
 }
 
+.payment-item{
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:.2s;
+}
+
+.payment-item.active{
+  border:2px solid #facc15;
+  background:rgba(250,204,21,.1);
+}
+
+
+#nominal.active {
+  border-color: #facc15;
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+}
     </style>
   </head>
 
@@ -979,19 +995,20 @@ color: #0f172a;
 
     <div class="amount-input">
       <span>Rp</span>
-      <input type="text" inputmode="numeric" value="50.000" id="nominal">
+      <input type="text" inputmode="numeric" value="50.000" id="nominal"  placeholder="Masukkan nominal">
     </div>
+
+
 
     <p>Masukkan nominal donasi sesuai keinginan Anda</p>
 
-    <div class="quick-amount">
-      <button>10.000</button>
-      <button>25.000</button>
-      <button class="active">50.000</button>
-      <button>100.000</button>
-      <button>200.000</button>
-    </div>
-
+    <div class="quick-amounts">
+  <button class="amount-btn" onclick="setNominal(10000)">10.000</button>
+  <button class="amount-btn" onclick="setNominal(25000)">25.000</button>
+  <button class="amount-btn" onclick="setNominal(50000)">50.000</button>
+  <button class="amount-btn" onclick="setNominal(100000)">100.000</button>
+  <button class="amount-btn" onclick="setNominal(200000)">200.000</button>
+</div>
   </div>
 
   <h3 class="payment-title">Pilih Metode Pembayaran</h3>
@@ -1007,7 +1024,7 @@ color: #0f172a;
         </div>
       </div>
 
-      <input type="radio" checked>
+      <input type="radio" name="payment" checked>
     </div>
 
     <div class="payment-item">
@@ -1019,7 +1036,7 @@ color: #0f172a;
         </div>
       </div>
 
-      <input type="radio">
+      <input type="radio" name="payment">
     </div>
 
     <div class="payment-item">
@@ -1031,7 +1048,7 @@ color: #0f172a;
         </div>
       </div>
 
-      <input type="radio">
+      <input type="radio" name="payment">
     </div>
     <div class="payment-item">
       <div class="payment-info">
@@ -1042,7 +1059,7 @@ color: #0f172a;
         </div>
       </div>
 
-      <input type="radio">
+      <input type="radio" name="payment">
     </div>
     <div class="payment-item">
       <div class="payment-info">
@@ -1053,7 +1070,7 @@ color: #0f172a;
         </div>
       </div>
 
-      <input type="radio">
+      <input type="radio" name="payment">
     </div>
     <div class="payment-item">
       <div class="payment-info">
@@ -1064,12 +1081,12 @@ color: #0f172a;
         </div>
       </div>
 
-      <input type="radio">
+      <input type="radio" name="payment">
     </div>
 
   </div>
 
-  <button class="submit-btn">
+  <button class="submit-btn" onclick="kirimDonasi()">
     Kirim Donasi
   </button>
   <p>🔒Transaksi aman dan terenkripsi</p>
@@ -1111,11 +1128,45 @@ color: #0f172a;
 
       const nominal = document.getElementById("nominal");
 
+function setNominal(nilai) {
+  nominal.value = new Intl.NumberFormat("id-ID").format(nilai);
+}
+
 nominal.addEventListener("input", function () {
   let angka = this.value.replace(/\D/g, "");
-
   this.value = new Intl.NumberFormat("id-ID").format(angka);
 });
+
+function setNominal(nilai) {
+  nominal.value = new Intl.NumberFormat("id-ID").format(nilai);
+
+  nominal.classList.add("active");
+
+  event.target.classList.add("active");
+}
+
+const methods = document.querySelectorAll(".payment-item");
+
+methods.forEach(item => {
+  item.addEventListener("click", () => {
+
+    methods.forEach(x => {
+      x.classList.remove("active");
+    });
+
+    item.classList.add("active");
+
+  });
+});
+
+
+function kirimDonasi() {
+  alert(
+    "🎉 Donasi berhasil dikirim!\n\nTerima kasih telah membantu masyarakat Papua."
+  );
+}
+
+
     </script>
   </body>
 </html>
